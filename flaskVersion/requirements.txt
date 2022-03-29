@@ -1,0 +1,13 @@
+click==8.1.0
+Flask==2.1.0
+itsdangerous==2.1.2
+jedi==0.18.1
+Jinja2==3.1.1
+MarkupSafe==2.1.1
+parso==0.8.3
+pluggy==1.0.0
+python-dotenv==0.20.0
+python-lsp-jsonrpc==1.0.0
+python-lsp-server==1.4.1
+ujson==5.1.0
+Werkzeug==2.1.0
