@@ -13,5 +13,9 @@
     "@sveltejs/kit": "next",
     "svelte": "^3.46.5"
   },
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "@types/inquirer": "^8.2.1",
+    "inquirer": "^8.2.2"
+  }
 }
