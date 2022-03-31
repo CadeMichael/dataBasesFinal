@@ -7,7 +7,15 @@ def create_app():
     app = Flask(__name__)
 
     @app.route('/')
-    def login():
+    def s_login():
         return render_template('login.html')
+
+    @app.route('/profile')
+    def s_profile():
+        return render_template('profile.html')
+    
+    @app.route('/matches')
+    def s_matches():
+        return render_template('matches.html')
 
     return app
