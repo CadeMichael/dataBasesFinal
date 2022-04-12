@@ -6,7 +6,7 @@
 
   <h1> Matches </h1>
   <hr>
-
+  {% if prefs %}
   <h1> {{ minAge }} </h1>
   <h1> {{ maxAge }} </h1>
   <h1> {{ state }} </h1>
@@ -15,5 +15,8 @@
   <h1> {{ pField }} </h1>
   <h1> {{ eLevel }} </h1>
   <h1> {{ eMajor }} </h1>
+  {% else %}
+    <h3> Set Some preferences!!! </h3>
+  {% endif %}
 
 {% endblock %}

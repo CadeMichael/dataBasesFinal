@@ -33,7 +33,8 @@ def preferences():
                 pName = pName,
                 pField = pField,
                 eLevel = eLevel,
-                eMajor = eMajor
+                eMajor = eMajor,
+                prefs=True
                 )
     return render_template(
             'preferences.html',
@@ -42,7 +43,7 @@ def preferences():
 
 @app.route('/matches')
 def matches():
-    return render_template('matches.html')
+    return render_template('matches.html', prefs=False)
 
 if __name__ == "__main__":
     app.run(debug=True)
