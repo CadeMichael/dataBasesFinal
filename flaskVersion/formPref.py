@@ -6,42 +6,42 @@ class PreferenceForm(FlaskForm):
     
     # minimum age 
     minAge = IntegerField(
-            'Minimum Age',
+            'Minimum Age:',
             )
 
     # maximum age 
     maxAge = IntegerField(
-            'Maximum Age',
+            'Maximum Age:',
             )
 
     # location State
     state = StringField(
-            'State',
+            'State:',
             )
 
     # location City
     city = StringField(
-            'City',
+            'City:',
             )
 
     # profession Name 
     pName = StringField(
-            'Profession',
+            'Profession:',
             )
 
     # profession Field 
     pField = StringField(
-            'Profession Field'
+            'Profession Field:',
             )
 
     # education Level 
     eLevel = StringField(
-            'Highest Level of Education',
+            'Level of Education:',
             )
 
     # education Major 
     eMajor = StringField(
-            'Degree Major',
+            'Degree Major:',
             )
 
     # submit 

@@ -4,61 +4,79 @@
 
   <h1>Set Your Preferences!</h1>
   <hr>
-  <div class="card">
-    <form method="POST" action="{{ url_for('preferences') }}">
-      <fieldset class='form-field col'>
-        {{ form.minAge.label }} 
-        <br/>
-        {{ form.minAge }}
-      </fieldset>
-      <br/>
-      <fieldset class='form-field col'>
-        {{ form.maxAge.label }}
-        <br/>
-        {{ form.maxAge }}
-      </fieldset>
-      <br/>
-      <fieldset class='form-field col'>
-        {{ form.state.label }}
-        <br/>
-        {{ form.state }}
-      </fieldset>
-      <br/>
-      <fieldset class='form-field col'>
-        {{ form.city.label }}
-        <br/>
-        {{ form.city }}
-      </fieldset>
-      <br/>
-      <fieldset class='form-field col'>
-        {{ form.pName.label }}
-        <br/>
-        {{ form.pName }}
-      </fieldset>
-      <br/>
-      <fieldset class='form-field col'>
-        {{ form.pField.label }}
-        <br/>
-        {{ form.pField }}
-      </fieldset>
-      <br/>
-      <fieldset class='form-field col'>
-        {{ form.eLevel.label }}
-        <br/>
-        {{ form.eLevel }}
-      </fieldset>
-      <br/>
-      <fieldset class='form-field col'>
-        {{ form.eMajor.label }}
-        <br/>
-        {{ form.eMajor }}
-      </fieldset>
-      <br/>
-      <div class="col"> 
-      {{ form.submit(class="btn btn-success")}}
+  <form method="POST" action="{{ url_for('preferences') }}">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">Age</div>
+          <br/>
+          <div class="card-body">
+            {{ form.minAge.label }} 
+            <br/>
+            {{ form.minAge }}
+            <br/>
+            {{ form.maxAge.label }}
+            <br/>
+            {{ form.maxAge }}
+          </div>
+          <br/>
+        </div>
       </div>
-
-    </form>
-  </div>
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">Location</div>
+          <br/>
+          <div class="card-body">
+            {{ form.state.label }}
+            <br/>
+            {{ form.state }}
+            <br/>
+            {{ form.city.label }}
+            <br/>
+            {{ form.city }}
+          </div>
+          <br/>
+        </div>
+      </div>
+    </div>
+    <br/>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">Profession</div>
+          <br/>
+          <div class="card-body">
+            {{ form.pName.label }}
+            <br/>
+            {{ form.pName }}
+            <br/>
+            {{ form.pField.label }}
+            <br/>
+            {{ form.pField }}
+          </div>
+          <br/>
+        </div>
+      </div> 
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">Profession</div>
+          <br/>
+          <div class="card-body">
+            {{ form.eLevel.label }}
+            <br/>
+            {{ form.eLevel }}
+            <br/>
+            {{ form.eMajor.label }}
+            <br/>
+            {{ form.eMajor }}
+          </div>
+          <br/>
+        </div>
+      </div> 
+    </div>
+    <br/>
+    {{ form.submit(class="btn btn-success")}}
+    <br/>
+  </form>
 
 {% endblock %}
