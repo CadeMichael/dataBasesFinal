@@ -1,17 +1,47 @@
-from flask import Flask, render_template
+# module imports 
+from flask import Flask, render_template, url_for, request
+import os 
+# local imports 
+from formPref import PreferenceForm
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = os.urandom(16)
 
 @app.route('/')
-def s_home():
+def home():
     return render_template('home.html')
 
-@app.route('/preferences')
-def s_preferences():
-    return render_template('preferences.html')
+@app.route('/preferences', methods=["GET","POST"])
+def preferences():
+    pForm = PreferenceForm()
+    if request.method == "POST":
+        # populate from pForm
+        minAge = request.form.get('minAge')
+        maxAge = request.form.get('maxAge')
+        state = request.form.get('state')
+        city = request.form.get('city')
+        pName = request.form.get('pName')
+        pField = request.form.get('pField')
+        eLevel = request.form.get('eLevel')
+        eMajor = request.form.get('eMajor')
+        return render_template(
+                'matches.html',
+                minAge = minAge,
+                maxAge = maxAge,
+                state = state,
+                city = city,
+                pName = pName,
+                pField = pField,
+                eLevel = eLevel,
+                eMajor = eMajor
+                )
+    return render_template(
+            'preferences.html',
+            form=pForm,
+            )
 
 @app.route('/matches')
-def s_matches():
+def matches():
     return render_template('matches.html')
 
 if __name__ == "__main__":
