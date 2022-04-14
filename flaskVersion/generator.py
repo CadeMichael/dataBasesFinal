@@ -13,8 +13,41 @@ def randNames(f_names, l_names):
         names.append((f,l,age))
     return names
 
-f_names = ['cade','john']
-l_names = ['smith', 'williams']
+f_names = [
+        'cade',
+        'john',
+        'mary',
+        'patricia',
+        'lisa',
+        'charles',
+        'jennifer',
+        'thomas',
+        'stephanie',
+        'will',
+        'joe',
+        'betty',
+        'grace',
+        'matthew',
+        'mark',
+        'quin']
+l_names = [
+        'smith',
+        'williams',
+        'lopez',
+        'lueker',
+        'johnson',
+        'oneal',
+        'connors',
+        'richardson',
+        'robinson',
+        'rogers',
+        'michaels',
+        'nelson',
+        'edwards',
+        'doe',
+        'mitchel',
+        'lafrance',
+        ]
 
 people = randNames(f_names, l_names)
 
