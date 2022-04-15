@@ -8,20 +8,24 @@
     <div class="row">
       <div class="col-md-6">
         <div class="card">
-          <div class="card-header">Age</div>
+          <div class="card-header">Profession</div>
           <br/>
           <div class="card-body">
-            {{ form.minAge.label }} 
+            {{ form.pName.label }}
             <br/>
-            {{ form.minAge }}
+            {{ form.pName }}
             <br/>
-            {{ form.maxAge.label }}
+            {{ form.pCompany.label }}
             <br/>
-            {{ form.maxAge }}
+            {{ form.pCompany }}
+            <br>
+            {{ form.pField.label }}
+            <br/>
+            {{ form.pField }}
           </div>
           <br/>
         </div>
-      </div>
+      </div> 
       <div class="col-md-6">
         <div class="card">
           <div class="card-header">Hobby</div>
@@ -47,24 +51,20 @@
     <div class="row">
       <div class="col-md-6">
         <div class="card">
-          <div class="card-header">Profession</div>
+          <div class="card-header">Age</div>
           <br/>
           <div class="card-body">
-            {{ form.pName.label }}
+            {{ form.minAge.label }} 
             <br/>
-            {{ form.pName }}
+            {{ form.minAge }}
             <br/>
-            {{ form.pCompany.label }}
+            {{ form.maxAge.label }}
             <br/>
-            {{ form.pCompany }}
-            <br>
-            {{ form.pField.label }}
-            <br/>
-            {{ form.pField }}
+            {{ form.maxAge }}
           </div>
           <br/>
         </div>
-      </div> 
+      </div>
       <div class="col-md-6">
         <div class="card">
           <div class="card-header">Education</div>
@@ -90,8 +90,9 @@
         </div>
       </div> 
     </div>
-    <br/>
     {{ form.submit(class="btn btn-success")}}
+    <br/>
+    <br/>
     <br/>
   </form>
 

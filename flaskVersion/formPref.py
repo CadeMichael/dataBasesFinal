@@ -7,13 +7,13 @@ class PreferenceForm(FlaskForm):
     # minimum age 
     minAge = IntegerField(
             'Minimum Age:',
-            default=-1
+            #default=-1
             )
 
     # maximum age 
     maxAge = IntegerField(
             'Maximum Age:',
-            default=-1
+            #default=-1
             )
 
     # profession Name 

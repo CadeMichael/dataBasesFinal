@@ -7,6 +7,153 @@
   <h1> About the Project </h1>
   <hr>
   <br>
-  <h2> The authors </h2>
+  <div class="row">
+    <div class="col-md-3">
+      <div class="card">
+        <div class="card-header"><h3>The authors</h3></div>
+        <div class="card-body">
+          <ul>
+            <li>
+              <h5>Cade Lueker</h5>
+            </li>
+            <li>
+              <h5>Isabella</h5>
+            </li>
+            <li>
+              <h5>Bradley</h5>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <div class="card">
+        <div class="card-header">
+          <h3>Technologies and FrameWorks</h3>
+        </div>
+        <div class="card-body">
+          <h5> Flask </h5>
+          <ul>
+            <li> 
+              we decided on flask because of it's versatility and minimalism. There were several other "better" frameworks that are a little faster and more "batteries inlcuded." But flask did exactly what we needed and kept everything simple. 
+            </li>
+            <li>
+              one of the main considerations was <b>python</b>. It's integration with databases and simplicity were one of the reasons we went with flask. Although JS isn't terrible I feel that python makes things a bit simplier, allowing us to focus on the database aspect instead of the programming aspect.
+            </li>
+          </ul>
+          <hr>
+          <h5>sqlite3</h5>
+          <ul>
+            <li>
+              much like python sqlite keeps everything simple. Although not ideal for production sqlite is perfect for prototyping. It is local which means no fussing with servers or logging in. Additionally it is easily viewed and alterted by GUI programs, making checking the database easy. The deciding factor was its tight integration with python as python has a native module for sqlite.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h2>Tables</h2>
+  <hr>
+  <div class="row">
+    <div class="col-md-3">
+      <div class="card">
+        <div class="card-header">Person</div>
+        <div class="card-body">
+          <ul>
+            <li><u>id</u> INTEGER</li>
+            <li>first_name TEXT</li>
+            <li>last_name TEXT</li>
+            <li>age INTEGER</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card">
+        <div class="card-header">hobby</div>
+        <div class="card-body">
+          <ul>
+            <li><u>name</u> TEXT</li>
+            <li>kind TEXT</li>
+            <li>setting TEXT</li>
+          </ul>
+          <br>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card">
+        <div class="card-header">profession</div>
+        <div class="card-body">
+          <ul>
+            <li><u>name</u> TEXT</li>
+            <li>field TEXT</li>
+          </ul>
+          <br>
+          <br>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card">
+        <div class="card-header">Institution</div>
+        <div class="card-body">
+          <ul>
+            <li><u>name</u> TEXT</li>
+            <li>type TEXT</li>
+          </ul>
+          <br>
+          <br>
+        </div>
+      </div>
+    </div> <!--col-->
+    <br>
+  </div> <!--row--> 
+  <br>
+  <h2>Relations</h2>
+  <hr>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-header">worksAs</div>
+        <div class="card-body">
+          <ul>
+            <li><u>pid</u> INTEGER</li>
+            <li>professionName TEXT</li>
+            <li>company TEXT</li>
+            <li>yearsExp INTEGER</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-header">studdied</div>
+        <div class="card-body">
+          <ul>
+            <li><u>pid</u> INTEGER</li>
+            <li>instName TEXT</li>
+            <li>major TEXT</li>
+            <li>degreeType TEXT</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-header">hasHobby</div>
+        <div class="card-body">
+          <ul>
+            <li><u>pid</u> INTEGER</li>
+            <li>hobbyName TEXT</li>
+            <li>yearsDone INTEGER</li>
+          </ul>
+          <br>
+        </div>
+      </div>
+    </div>
+    <br>
+  <div> <!--row--> 
+  <br>
 
 {% endblock %}
