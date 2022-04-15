@@ -1,12 +1,20 @@
 # module imports 
 from flask import Flask, render_template, request
 import os 
+import sqlite3
 # local imports 
 from formPref import PreferenceForm
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.urandom(16)
 
+def allPeople():
+    con = sqlite3.connect('notebook.db')
+    cur = con.cursor()
+    people = cur.execute("select * from people").fetchall()
+    con.commit()
+    con.close()
+    return people
 @app.route('/')
 def home():
     """ Render information on the project """
@@ -26,6 +34,7 @@ def preferences():
         pField = request.form.get('pField')
         eLevel = request.form.get('eLevel')
         eMajor = request.form.get('eMajor')
+        people = allPeople()
         return render_template(
                 'matches.html',
                 minAge = minAge,
@@ -36,6 +45,7 @@ def preferences():
                 pField = pField,
                 eLevel = eLevel,
                 eMajor = eMajor,
+                people = people
                 )
     return render_template(
             'preferences.html',

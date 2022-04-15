@@ -16,4 +16,19 @@
   <h1> {{ eLevel }} </h1>
   <h1> {{ eMajor }} </h1>
 
+  <div class="row">
+  {% for person in people %}
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header"> {{person[1] + " " + person[2]}} </div>
+        <div class = "card-body"> 
+          <ul>
+            <li> Age: {{person[3]}} </li>
+          <ul>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+  </div>
+
 {% endblock %}
