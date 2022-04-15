@@ -39,7 +39,7 @@ def prepDB():
     try: 
         cur.execute("""CREATE TABLE profession (
         name TEXT,
-        feild TEXT
+        field TEXT
         )    
         """)
     except:
@@ -48,7 +48,7 @@ def prepDB():
         cur.execute("""CREATE TABLE worksAs (
         pid INTEGER,
         professionName TEXT,
-        comany TEXT,
+        company TEXT,
         yearsExp INTEGER
         )    
         """)
