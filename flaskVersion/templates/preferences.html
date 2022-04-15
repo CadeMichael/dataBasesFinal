@@ -54,13 +54,19 @@
           <div class="card-header">Age</div>
           <br/>
           <div class="card-body">
+            <br/>
             {{ form.minAge.label }} 
+            <br/>
             <br/>
             {{ form.minAge }}
             <br/>
+            <br/>
             {{ form.maxAge.label }}
             <br/>
+            <br/>
             {{ form.maxAge }}
+            <br/>
+            <br/>
           </div>
           <br/>
         </div>
@@ -90,8 +96,11 @@
         </div>
       </div> 
     </div>
-    {{ form.submit(class="btn btn-success")}}
     <br/>
+    <br/>
+    <div class="d-flex justify-content-center">
+      {{ form.submit(class="btn btn-success")}}
+    </div>
     <br/>
     <br/>
   </form>
