@@ -7,21 +7,13 @@ class PreferenceForm(FlaskForm):
     # minimum age 
     minAge = IntegerField(
             'Minimum Age:',
+            default=-1
             )
 
     # maximum age 
     maxAge = IntegerField(
             'Maximum Age:',
-            )
-
-    # location State
-    state = StringField(
-            'State:',
-            )
-
-    # location City
-    city = StringField(
-            'City:',
+            default=-1
             )
 
     # profession Name 
@@ -29,18 +21,48 @@ class PreferenceForm(FlaskForm):
             'Profession:',
             )
 
+    # profession Company 
+    pCompany = StringField(
+            'Works For:',
+            )
+
     # profession Field 
     pField = StringField(
             'Profession Field:',
             )
 
-    # education Level 
-    eLevel = StringField(
-            'Level of Education:',
+    # hobby name
+    hName = StringField(
+            'Hobby name',
+            )
+
+    # hobby kind
+    hKind = StringField(
+            'Type of hobby',
+            )
+
+    # hobby setting
+    hSetting = StringField(
+            'Hobby Setting',
+            )
+
+    # education name 
+    eName = StringField(
+            'Name of Institution:',
+            )
+
+    # education type 
+    eType = StringField(
+            'Type of Institution',
             )
 
     # education Major 
     eMajor = StringField(
+            'Degree Major:',
+            )
+
+    # education degree 
+    eDegree = StringField(
             'Degree Major:',
             )
 

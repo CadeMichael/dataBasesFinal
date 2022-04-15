@@ -4,6 +4,7 @@ import os
 import sqlite3
 # local imports 
 from formPref import PreferenceForm
+from query import queryPrefs
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.urandom(16)
@@ -28,23 +29,30 @@ def preferences():
         # populate from pForm
         minAge = request.form.get('minAge')
         maxAge = request.form.get('maxAge')
-        state = request.form.get('state')
-        city = request.form.get('city')
         pName = request.form.get('pName')
+        pCompany = request.form.get('pCompany')
         pField = request.form.get('pField')
-        eLevel = request.form.get('eLevel')
+        hName = request.form.get('hName')
+        hKind = request.form.get('hKind')
+        hSetting = request.form.get('hSetting')
+        eName = request.form.get('eName')
+        eType = request.form.get('eType')
         eMajor = request.form.get('eMajor')
-        people = allPeople()
+        eDegree = request.form.get('eDegree')
+        people = queryPrefs(minAge,
+                maxAge,
+                pName,
+                pCompany,
+                pField,
+                hName,
+                hKind,
+                hSetting,
+                eName,
+                eType,
+                eMajor,
+                eDegree)
         return render_template(
                 'matches.html',
-                minAge = minAge,
-                maxAge = maxAge,
-                state = state,
-                city = city,
-                pName = pName,
-                pField = pField,
-                eLevel = eLevel,
-                eMajor = eMajor,
                 people = people
                 )
     return render_template(

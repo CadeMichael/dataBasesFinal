@@ -24,16 +24,20 @@
       </div>
       <div class="col-md-6">
         <div class="card">
-          <div class="card-header">Location</div>
+          <div class="card-header">Hobby</div>
           <br/>
           <div class="card-body">
-            {{ form.state.label }}
+            {{ form.hName.label }}
             <br/>
-            {{ form.state }}
+            {{ form.hName }}
             <br/>
-            {{ form.city.label }}
+            {{ form.hKind.label }}
             <br/>
-            {{ form.city }}
+            {{ form.hKind }}
+            <br/>
+            {{ form.hSetting.label }}
+            <br/>
+            {{ form.hSetting }}
           </div>
           <br/>
         </div>
@@ -50,6 +54,10 @@
             <br/>
             {{ form.pName }}
             <br/>
+            {{ form.pCompany.label }}
+            <br/>
+            {{ form.pCompany }}
+            <br>
             {{ form.pField.label }}
             <br/>
             {{ form.pField }}
@@ -62,13 +70,21 @@
           <div class="card-header">Education</div>
           <br/>
           <div class="card-body">
-            {{ form.eLevel.label }}
+            {{ form.eName.label }}
             <br/>
-            {{ form.eLevel }}
+            {{ form.eName }}
+            <br/>
+            {{ form.eType.label }}
+            <br/>
+            {{ form.eType }}
             <br/>
             {{ form.eMajor.label }}
             <br/>
             {{ form.eMajor }}
+            <br/>
+            {{ form.eDegree.label }}
+            <br/>
+            {{ form.eDegree }}
           </div>
           <br/>
         </div>
