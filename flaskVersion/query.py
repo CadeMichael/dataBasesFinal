@@ -92,8 +92,10 @@ def queryPrefs(minAge,
         eType,
         eMajor,
         eDegree):
+    # establish connection with database
     con = sqlite3.connect('notebook.db')
     cur = con.cursor()
+    # handle empty int form values 
     if minAge == '':
         minAge = -1
     else: 
@@ -102,17 +104,24 @@ def queryPrefs(minAge,
         maxAge = -1
     else: 
         maxAge = int(maxAge)
+    # set matches to impossible value
     matches = [-1]
+    # check if age was queried 
     if minAge > 0 or maxAge > 0:
+        # get query
         age_q = ageQuery(minAge, maxAge)
+        # get people
         age_approved = cur.execute(age_q).fetchall()
+        # intersection with other query was null, break
         if matches == []:
             return []
+        # first query triggered
         elif matches == [-1]:
             matches = age_approved
-            #print(matches)
         else:
+            # intersection of matches 
             matches = set.intersection(set(matches), set(age_approved))
+    # check for profession queries
     if pName != "" or pCompany != "" or pField != "":
         job_q = jobQuery(pName, pCompany, pField)
         job_approved = cur.execute(job_q).fetchall()
@@ -122,6 +131,7 @@ def queryPrefs(minAge,
             matches = job_approved
         else:
             matches = set.intersection(set(matches), set(job_approved))
+    # check for hobby queries 
     if hName != "" or hKind != "" or hSetting != "":
         hobby_q = hobbyQuery(hName, hKind, hSetting)
         hobby_approved = cur.execute(hobby_q).fetchall()
@@ -131,6 +141,7 @@ def queryPrefs(minAge,
             matches = hobby_approved
         else:
             matches = set.intersection(set(matches), set(hobby_approved))
+    # check for education queries 
     if eName != "" or eType != "" or eMajor != "" or eDegree != "":
         prof_q = educationQuery(eName, eType, eMajor, eDegree)
         prof_approved = cur.execute(prof_q).fetchall()
@@ -140,12 +151,9 @@ def queryPrefs(minAge,
             matches = prof_approved
         else:
             matches = set.intersection(set(matches), set(prof_approved))
+    # check if there was no user input query
     if matches == [-1]:
         matches = cur.execute("select first_name, last_name, age from people").fetchall()
     con.commit()
     con.close()
     return matches
-
-    
-    
-

@@ -10,6 +10,7 @@ def prepDB():
     cur = con.cursor()
     # create tables
     try: 
+        # people
         cur.execute("""CREATE TABLE people (
         id INTEGER,
         first_name TEXT,
@@ -20,6 +21,7 @@ def prepDB():
     except:
         print('table already made')
     try: 
+        # hobby
         cur.execute("""CREATE TABLE hobby (
         name TEXT,
         kind TEXT,
@@ -29,6 +31,7 @@ def prepDB():
     except:
         print('table already made')
     try: 
+        # institution
         cur.execute("""CREATE TABLE Institution (
         name TEXT,
         type TEXT
@@ -37,6 +40,7 @@ def prepDB():
     except:
         print('table already made')
     try: 
+        # profession
         cur.execute("""CREATE TABLE profession (
         name TEXT,
         field TEXT
@@ -44,7 +48,9 @@ def prepDB():
         """)
     except:
         print('table already made')
+    # Relations
     try: 
+        # worksAs
         cur.execute("""CREATE TABLE worksAs (
         pid INTEGER,
         professionName TEXT,
@@ -55,6 +61,7 @@ def prepDB():
     except:
         print('table already made')
     try: 
+        # studdied
         cur.execute("""CREATE TABLE studdied (
         pid INTEGER,
         instName TEXT,
@@ -65,6 +72,7 @@ def prepDB():
     except:
         print('table already made')
     try: 
+        # hasHobby
         cur.execute("""CREATE TABLE hasHobby (
         pid INTEGER,
         hobbyName TEXT,
@@ -113,6 +121,7 @@ l_names = [
         'mitchel',
         'lafrance']
 
+# create a list of random people
 def randNames(f_names, l_names): 
     f_names = f_names.copy()
     l_names = l_names.copy()
@@ -162,6 +171,7 @@ hobbies = [biking, swimming,
         basketball, running,
         writing, photography]
 
+# convert to list 
 def hobbyTuple(hobbies):
     h_list = []
     for hobby in hobbies:
@@ -199,6 +209,7 @@ companies = ['sony','google',
         'uber','apple',
         'irs','cia']
 
+# populate tables
 def populateDB(people, hobbies, institutions, professions, companies):
     # connect to db 
     con = sqlite3.connect('notebook.db')

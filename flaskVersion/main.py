@@ -7,8 +7,10 @@ from formPref import PreferenceForm
 from query import queryPrefs
 
 app = Flask(__name__)
+# for flask-wtf need secret key
 app.config['SECRET_KEY'] = os.urandom(16)
 
+# generate a list of all people (for testing purposes)
 def allPeople():
     con = sqlite3.connect('notebook.db')
     cur = con.cursor()
@@ -16,11 +18,13 @@ def allPeople():
     con.commit()
     con.close()
     return people
+# home
 @app.route('/')
 def home():
     """ Render information on the project """
     return render_template('home.html')
 
+# preferences
 @app.route('/preferences', methods=["GET","POST"])
 def preferences():
     """ Take in user preferences and return matches """
@@ -59,10 +63,6 @@ def preferences():
             'preferences.html',
             form=pForm,
             )
-
-# @app.route('/matches')
-# def matches():
-#     return render_template('matches.html', prefs=False)
 
 if __name__ == "__main__":
     app.run(debug=True)
