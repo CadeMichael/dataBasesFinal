@@ -9,3 +9,4 @@ Final Project CSDS341
 # Information and screen shots 
 
 - everything relating to the outcome of the project can be found in the ![presentation](Presentation.pdf)
+- ![about](aboutPg.png)
