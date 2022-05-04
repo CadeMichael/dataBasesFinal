@@ -5,3 +5,5 @@ Final Project CSDS341
 - need a simple web front end
 - need a simple cli 
 - leaning towards python as it is a bit more streamlined in terms of interacting with a db 
+
+![](./Presentation.pdf)
