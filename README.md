@@ -6,4 +6,6 @@ Final Project CSDS341
 - need a simple cli 
 - leaning towards python as it is a bit more streamlined in terms of interacting with a db 
 
-![presentation](Presentation.pdf)
+# Information and screen shots 
+
+- everything relating to the outcome of the project can be found in the ![presentation](Presentation.pdf)
